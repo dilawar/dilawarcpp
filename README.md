@@ -1,2 +1,3 @@
 # dilawarcpp
-Personal collection of CPP libraries 
+
+Personal collection of C++ libraries.
