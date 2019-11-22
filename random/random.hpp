@@ -8,8 +8,6 @@
 #include <tuple>
 #include <utility>
 
-namespace dilawar {
-
 static std::default_random_engine gen_;
 static std::uniform_real_distribution<> dist_;
 
@@ -52,7 +50,5 @@ std::pair<int, R> choiceWeighted(const T& values, const T& weights)
                    [W](R x) -> R { return x / W; });
     return choiceProb(values, prob);
 }
-
-}  // namespace dilawar
 
 #endif /* end of include guard: METHODS_H */
