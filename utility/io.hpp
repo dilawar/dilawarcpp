@@ -45,28 +45,29 @@ void appendFile(const T& data, const string& path)
 }
 
 template<typename T=double>
-string mapToCSV(const map<string, vector<T>>& data)
+string mapToCSV(const map<string, vector<T> >& data)
 {
-    string s;
+    stringstream ss;
+    ss << fixed;
     char delim = ' ';
-    vector<string> header;
-    for (auto &v: data)
+    vector<vector<double>> cols;
+    size_t nCols = 0;
+    for (auto it = data.begin(); it != data.end(); it++)
     {
-        s += v.first + delim;
-        header.push_back(v.first);
+        nCols += 1;
+        ss << it->first << delim;
+        cols.push_back(it->second);
     }
 
-    s.pop_back();
-    s += '\n';
+    ss.seekp(-1, ss.cur); ss << endl;
 
-    size_t N = data[header[0]].size();
-    for(size_t i = 0; i < N; i++) {
-        for (auto &h: header) {
-            s += to_string(data[header][i]) << delim;
-            s.pop_back(); s += '\n';
-        }
+    for (size_t ii = 0; ii < cols[0].size(); ii++) {
+        for (size_t i = 0; i < nCols; i++)
+            ss << cols[i][ii] << delim;
+
+        ss.seekp(-1, ss.cur); ss << endl;
     }
-    return s;
+    return ss.str();
 }
 
 }  // namespace dilawar
