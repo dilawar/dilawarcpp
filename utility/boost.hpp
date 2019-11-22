@@ -23,6 +23,8 @@
 
 using namespace boost::histogram;
 
+namespace dilawar {
+
     template<typename A, typename S>
 std::string hist1DToCSV(boost::histogram::histogram<A, S>& hist)
 {
@@ -33,5 +35,7 @@ std::string hist1DToCSV(boost::histogram::histogram<A, S>& hist)
     }
     return ss.str();
 }
+
+}  // namespace dilawar
 
 #endif /* end of include guard: BOOST_H */

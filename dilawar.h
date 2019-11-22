@@ -17,13 +17,9 @@
 #ifndef DILAWAR_H
 #define DILAWAR_H
 
-namespace dilawar {
-
 #include "external/gnuplot-iostream.h"
 #include "external/prettyprint.hpp"
 #include "random/random.hpp"
 #include "utility/io.hpp"
-
-}  // namespace dilawar
 
 #endif /* end of include guard: DILAWAR_H */
