@@ -21,5 +21,6 @@
 #include "external/prettyprint.hpp"
 #include "random/random.hpp"
 #include "utility/io.hpp"
+#include "utility/numeric.hpp"
 
 #endif /* end of include guard: DILAWAR_H */
