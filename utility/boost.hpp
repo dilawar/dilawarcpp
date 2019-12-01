@@ -31,7 +31,7 @@ std::string hist1DToCSV(boost::histogram::histogram<A, S>& hist)
     std::stringstream ss;
     for (auto && x: indexed(hist, coverage::all)) {
         auto midPoint = (x.bin().lower() + x.bin().upper())/2.0;
-        ss << boost::format("%1% %2%") % midPoint % *x << endl;
+        ss << boost::format("%1%,%2%") % midPoint % *x << endl;
     }
     return ss.str();
 }
