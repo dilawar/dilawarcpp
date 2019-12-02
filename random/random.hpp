@@ -8,6 +8,8 @@
 #include <tuple>
 #include <utility>
 
+#include "utility/numeric.hpp"
+
 namespace dilawar {
 
 static std::default_random_engine gen_;
@@ -26,7 +28,7 @@ std::pair<int, R> choiceProb(const T& values, const T& probs)
     R acc = 0;
     R r = dist_(gen_);
     assert(true ==
-           approximatelyEqual(
+           dilawar::approximatelyEqual(
                1.0, std::accumulate(probs.begin(), probs.end(), 0.0), 1e-9));
     auto N = probs.size();
     for (int i = 0; i < N; i++) {

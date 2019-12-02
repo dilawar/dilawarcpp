@@ -17,6 +17,9 @@
 #include <numeric>
 using namespace std;
 
+#ifndef NUMERIC_H
+#define NUMERIC_H
+
 namespace dilawar {
 
 // These are from Knuth and from here
@@ -47,3 +50,5 @@ bool definitelyLessThan(T a, T b, T epsilon)
 }
 
 }  // namespace dilawar
+
+#endif /* end of include guard: NUMERIC_H */
